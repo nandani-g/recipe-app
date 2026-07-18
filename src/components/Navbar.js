@@ -1,7 +1,13 @@
+import { Link } from "react-router-dom"
+
+
+
 import { useState } from "react"
 import Sidebar from './Sidebar'
 import { faHome, faList, faCog } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Router } from "react-router-dom"
+import { dom } from "@fortawesome/fontawesome-svg-core"
 
 export default function Navbar() {
   const [showSidebar, setShowSidebar] = useState(false)
@@ -22,9 +28,9 @@ export default function Navbar() {
         <a href="#!" className="logo">F<span>oo</span>diesHub</a>
         <div className="nav-links">
           {links.map(link => (
-            <a href="#!" key={link.name}>
+            <Link  to = {link.path} key={link.name}>
               <FontAwesomeIcon icon={link.icon} /> {link.name}
-            </a>
+            </Link>
           ))}
         </div>
         <div onClick={() => setShowSidebar(true)} className={showSidebar ? "sidebar-btn active" : "sidebar-btn"}>
