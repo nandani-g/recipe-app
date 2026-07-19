@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link,useLocation } from "react-router-dom"
 
 
 
@@ -11,6 +11,7 @@ import { dom } from "@fortawesome/fontawesome-svg-core"
 
 export default function Navbar() {
   const [showSidebar, setShowSidebar] = useState(false)
+  const location = useLocation()
   const links = [
     { name: "Home", path: "/", icon: faHome },
     { name: "Recipe", path: "/recipes", icon: faList },
@@ -28,7 +29,7 @@ export default function Navbar() {
         <a href="#!" className="logo">F<span>oo</span>diesHub</a>
         <div className="nav-links">
           {links.map(link => (
-            <Link  to = {link.path} key={link.name}>
+            <Link  to = {link.path} className = {location.pathname === link.path ? "active" : ""}  key={link.name}>
               <FontAwesomeIcon icon={link.icon} /> {link.name}
             </Link>
           ))}
