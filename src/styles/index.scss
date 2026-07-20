@@ -98,7 +98,7 @@ img{
 
 @import "partials/_improve-section.scss";
 
-@import "partials/-quote-section.scss";
+@import "partials/__quote-section.scss";
 
 
 @import "partials/chiefs-section";
@@ -107,13 +107,22 @@ img{
 
 @import "partials/_previousSearches";
  .recipes-container{
-
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-gap: 1.5em;
+  
 
 
  }
 
  .recipe-card{
-  background-color: rebeccapurple;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px  10px var(--shadow-color);
+  .auther-img{
+    height: 100px;
+    width: 100px;
+  }
  }
 
 .main{
