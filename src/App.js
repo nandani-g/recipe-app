@@ -4,33 +4,27 @@ import {
   Route
 } from "react-router-dom"
 
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer";
 
-import Navbar from './components/Navbar'
-import Footer from './components/Footer';
-
-import Home from './pages/Home';
-import Recipes from './pages/Recipes';
-import Settings from './pages/Settings';
-
-
+import Home from "./pages/Home";
+import Recipes from "./pages/Recipes";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
     <Router>
-       <Navbar/>
-      <div className='container main'>
-       
-      <Routes>
-        <Route path ="/" element = {<Home />} />
-        <Route path ="/recipes" element = {<Recipes />} />
-        <Route path ="/settings" element = {<Settings />} />
-      </Routes>
+      <Navbar />
+      <div className="container main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/recipes" element={<Recipes />} />
+          <Route path="/settings" element={<Settings />} />
+        </Routes>
       </div>
-      <Footer/>
+      <Footer />
     </Router>
-  
-    
   )
 }
 
-export default App;                
+export default App;
